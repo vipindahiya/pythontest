@@ -61,6 +61,8 @@ pipeline {
                         //This unstash step restores the Python source code and compiled byte
                         //code files (with .pyc extension) from the previously saved stash. image]
                         //and runs this image as a separate container.
+                        echo "Volume path is ${VOLUME}"
+                        echo "Image name is ${IMAGE}"
                         dir(path: env.BUILD_ID) {
                             unstash(name: 'compiled-results')
 
